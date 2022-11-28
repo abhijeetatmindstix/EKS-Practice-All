@@ -60,3 +60,25 @@ kubectl get nodes -o wide
 
 # Our kubectl context should be automatically changed to new cluster
 kubectl config view --minify
+
+
+
+
+
+# Delete EKS Cluster & Node Groups
+# List EKS Clusters
+eksctl get clusters
+
+# Capture Node Group name
+eksctl get nodegroup --cluster=<clusterName>
+eksctl get nodegroup --cluster=eksdemo1
+
+# Delete Node Group
+eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
+eksctl delete nodegroup --cluster=eksdemo1 --name=eksdemo1-ng-public1
+
+
+
+# Delete Cluster
+eksctl delete cluster <clusterName>
+eksctl delete cluster eksdemo1
